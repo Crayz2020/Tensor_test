@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class TensorTests {
@@ -43,7 +43,16 @@ public class TensorTests {
     void tensorSeviceCenterTest() {
         open("https://tensor.ru/");
         $(".tensor_ru-Header__button-area").click();
-        $(byText("Сервисный центр")).click();
+        sleep(5000);
+        $(byText("Сервисный центр и ЦТО")).click();
+        $(".tensor_ru-CTO__Banner-btn").click();
+        sleep(40000);
+        $(".ofd-dialog_request-person").$(".controls-TextBox__field").setValue("Андрей");
+        $(".ofd-dialog_request-contacts").$(".controls-FormattedTextBox__field").click();
+        $(".ofd-dialog_request-contacts").$(".controls-FormattedTextBox__field").sendKeys("1234567890");
+        $(".ofd-dialog_request-checkbox-caption").click();
+        $(".controls-Button__text").click();
+        $(".ws-infobox-type-error").shouldBe(visible);
 
     }
 
