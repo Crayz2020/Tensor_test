@@ -1,0 +1,7 @@
+//5110581045:AAG3PwAsVlIbYBjz2yXNFdGtSkn-83oaloU
+//733650426
+
+curl -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{"chat_id": "733650426", "text": "This is a test from me", "disable_notification": true}' \
+     https://api.telegram.org/bot5110581045:AAG3PwAsVlIbYBjz2yXNFdGtSkn-83oaloU/sendMessage
