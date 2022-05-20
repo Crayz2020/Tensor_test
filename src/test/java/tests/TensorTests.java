@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static tests.TestData.*;
@@ -11,12 +12,14 @@ public class TensorTests extends TestBase {
 
 
     @Test
+    @DisplayName("Проверка главной страницы")
     void tensorMainHeaderTest() {
         tensorPage.checkMainHeader(headerText);
 
     }
 
     @Test
+    @DisplayName("Проверка страницы 'О компании'")
     void tensorAboutTest() {
         tensorPage
                 .aboutPage()
@@ -24,6 +27,7 @@ public class TensorTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверка верного отображения филиалов")
     void tensorBranchesTest() {
         tensorPage
                 .branchesPage()
@@ -33,6 +37,7 @@ public class TensorTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверка ошибки заполнения формы")
     void tensorServiceCenterTest() {
         tensorPage
                 .serviceCenterPage()
